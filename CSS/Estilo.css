@@ -1,0 +1,339 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;600;700&display=swap');
+
+:root{
+    --dark-gray: hsl(0, 0%, 63%);
+    --black: hsl(0, 0%, 0%);
+    --white: hsl(0, 0%, 100%);
+    --very-dark-gray: hsl(0, 0%, 27%);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'League Spartan', sans-serif;
+    font-size: 12px;
+    background-image: linear-gradient( var(--black), var(--black));
+}
+
+.container{
+    width: 90%;
+    margin: 0 auto;
+    padding: 60px 0;
+    overflow: hidden;
+}
+
+.main{
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, max-content);
+    grid-template-areas:
+    "main"
+    "buy"
+    "image1"
+    "about"
+    "image2";
+}
+
+.main_hero{
+    min-height: 360px;
+    background-image: url(../images/desktop-image-hero-1.jpg);
+    background-size: cover;
+    background-position: center;
+    grid-area: main;
+}
+
+.main_hero2{
+    min-height: 360px;
+    background-size: cover;
+    background-position: center;
+    grid-area: main;
+    background-image: url(../images/desktop-image-hero-2.jpg);
+}
+
+.main_hero3{
+    min-height: 360px;
+    background-size: cover;
+    background-position: center;
+    grid-area: main;
+    background-image: url(../images/desktop-image-hero-3.jpg);
+}
+
+.main_nav{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.main_links{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-evenly;
+    background: var(--white);
+    position: absolute;
+    padding: 45px 0;
+    left: 0;
+    top: -20%;
+    transition: .5s;
+}
+
+.main_close{
+    top: 0;
+    z-index: 1;
+}
+
+.main_background{
+    opacity: .5; 
+}
+
+.main_list{
+    list-style: none;
+}
+
+.main_img{
+    margin: 0 10% 0 -5%;
+    
+}
+
+.main_link{
+    text-decoration: none;
+    text-transform: lowercase;
+    color: var(--black);
+    font-weight: 600;
+}
+
+.main_logo{
+    margin: 0 auto;
+}
+
+.main_controls{
+    align-self: end;
+    justify-self: end;
+    grid-area: main;
+    background-color: var(--black);
+    display: flex;
+    width: 100px;
+    height: 50px;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.main_arrows{
+    height: 30%;
+}
+
+.buy_container{
+    grid-area: buy;
+    background-color: var(--white);
+    padding: 35px 24px;
+    display: flex;
+    flex-direction: column;
+}
+
+.buy_title{
+    margin: 20px 0;
+    font-weight: 700;
+    color: var(--black);
+    font-size: 2.28rem;
+}
+
+.buy_parrafo, .about_parrafo{
+    color: var(--dark-gray);
+    line-height: 22px;
+    font-size: 16px;
+}
+
+.buy_button{
+    text-transform: uppercase;
+    letter-spacing: 12px;
+    font-weight: 600;
+    font-size: 16px;
+    margin: 32px 0;
+}
+
+.buy_button_arrow{
+    margin: 0 20px;
+}
+
+.about_img1{
+    grid-area: image1;
+    background-image: url(../images/image-about-dark.jpg);
+    min-height: 250px;
+    background-size: cover;
+    background-position: center;
+}
+
+.about_container{
+    grid-area: about;
+    background-color: var(--white);
+    padding: 35px 24px;
+    display: flex;
+    flex-direction: column;
+}
+
+.about_h3{
+    color: var(--black);
+    margin: 20px 0;
+    font-weight: 700;
+    color: var(--black);
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 5.5px;
+}
+
+.about_img2{
+    grid-area: image2;
+    background-image: url(../images/image-about-light.jpg);
+    min-height: 250px;
+    background-size: cover;
+    background-position: center;
+}
+
+@media (min-width: 426px) {
+    body{
+        background: var(--white);
+    }
+    .main{
+        max-width: 1440PX;
+        display: grid;
+        grid-template-columns: repeat(10, 1fr);
+        grid-template-rows: repeat(3, auto);
+        grid-template-areas: 
+        "main main main main main main buy buy buy buy"
+        "main main main main main main buy buy buy buy"
+        "image1 image1 image1 about about about about image2 image2 image2";
+    }
+    
+    .main_hero {
+        min-height: 520px;
+    }
+    .main_hero2{
+        min-height: 520px;
+    }
+    .main_hero3{
+        min-height: 520px;
+    }
+    .main_nav{
+        display: inline-flex;
+        justify-content: flex-start;
+    }
+    .container{
+        width: 100%;
+        margin: 0 -25px;
+        padding: 37px 0;
+        overflow: hidden;
+    }
+    .main_logo{
+        margin: 0px 7%;
+    }
+    .main_hamburger{
+        margin: 0px 5px;
+    }
+
+    .main_links{
+        max-width: 1440px;
+        width: 50%;
+        background: transparent;
+        top: 0;
+        transition: none;
+        padding: 35px 10%;
+    }
+    
+    .main_img{
+        position: absolute;
+        z-index: -10;        
+    }
+    
+    .main_link{
+        color: var(--white);
+        font-size: 17px;
+        font-weight: 500;
+    }    
+    
+    .main_controls{
+        position: relative;
+        align-self: end;
+        grid-column: 7;
+        background-color: var(--black);
+        display: flex;
+        width: 100%;
+        height: 65px;
+        justify-content: space-around;
+        align-items: center;
+    }
+    
+    .main_arrows{
+        height: 45%;
+    }
+    
+    .buy_container{
+        grid-area: buy;
+        background-color: transparent;
+        padding: 80px 84px;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .buy_title{
+        margin: 25px 0;
+        font-weight: 700;
+        color: var(--black);
+        font-size: 2.9rem;
+    }
+    
+    .buy_parrafo, .about_parrafo{
+        color: var(--dark-gray);
+        line-height: 22px;
+        font-size: 15.5px;
+    }
+    
+    .buy_button{
+        text-transform: uppercase;
+        letter-spacing: 12px;
+        font-weight: 600;
+        font-size: 16px;
+        margin: 32px 0;
+    }
+    
+    .buy_button_arrow{
+        margin: 0 20px;
+    }
+    
+    .about_img1{
+        grid-area: image1;
+        background-image: url(../images/image-about-dark.jpg);
+        min-height: 266px;
+        background-size: cover;
+        background-position: center;
+    }
+    
+    .about_container{
+        grid-area: about;
+        background-color: var(--white);
+        padding: 36px;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .about_h3{
+        color: var(--black);
+        margin: 27px 0 20px;
+        font-weight: 700;
+        color: var(--black);
+        font-size: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 5.5px;
+    }
+    
+    .about_img2{
+        grid-area: image2;
+        background-image: url(../images/image-about-light.jpg);
+        max-height: 266px;
+        background-size: cover;
+        background-position: center;
+    }
+}
